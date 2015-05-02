@@ -21,7 +21,7 @@
 
 
 <% all_decks.each do |deck| %>
-<a class= "deckname" href="/card/<%=deck.card_ids.sample%>">
+<a class= "deckname" href="/card/<%=deck.card_ids.sample%>?current_deck_id=<%=deck.id%>">
   <div class="square">
     <div class="content">
         <div class="table">
