@@ -3,7 +3,7 @@ class CreateRounds < ActiveRecord::Migration
     create_table :rounds do |t|
       t.references :deck
       t.references :user
-
+      t.boolean :live
 
       t.timestamps
     end

@@ -2,7 +2,7 @@
 <p><%=flash_card.question%></p>
 
 <h3>What's your answer?</h3>
-<form action='#'>
+<form action='/:card_id' method='POST'>
   <input type='text' name='answer' placeholder='answer here'>
   <input type='submit'>
 </form>

@@ -31,6 +31,8 @@ end
 
 get '/:card_id' do |card_id|
   if current_user
+    Round.new
+    check_answer
     card_array = Card.where(deck_id: params[:deck])
     flash_card = card_array.sample
     erb :"/card/card", locals:{card_array: card_array, flash_card: flash_card}
