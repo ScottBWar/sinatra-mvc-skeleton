@@ -1,4 +1,35 @@
-<h3> Choose a Deck </h3>
+<link rel="stylesheet" href="/css/deckgrid.css">
+<div class="darksection">
+
+</div>
+<div class="intro-div">
+<div class="flash-div">
+
+
+
+<div class="animated bounceIn" id="this">
+<a class="flash2" href="">CHOOSE A DECK</a>
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
 <% all_decks.each do |deck| %>
-<h4> <a href="/1?deck=<%=deck.id%>"><%= deck.name %> </a></h4>
+<div class="square">
+    <div class="content">
+        <div class="table">
+            <div class="table-cell">
+                <ul><a class= "deckname" href="/1?deck=<%=deck.id%>"><%= deck.name %> </a>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <%end%>

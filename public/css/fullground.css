@@ -1,0 +1,16 @@
+body {
+background: url('../img/assault.png');
+background-size: auto, cover;
+
+}
+
+.click {
+  font-size: 1.5em;
+  color: #34495e;
+}
+
+.click:hover {
+  font-size: 1.5em;
+  color:#27ae60;
+
+}

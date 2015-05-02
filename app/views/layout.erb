@@ -6,6 +6,7 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+  <link rel="stylesheet" href="/css/animate.css">
   <link rel="stylesheet" href="/css/normalize.css">
   <!--
     application.css is where you put your styles
@@ -22,10 +23,13 @@
 <body>
 <div id="content">
   <header>
-    <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
+    <div class="darksection">
+
     <div id="login-toolbar">
       <% if current_user %>
         <a href="/logout">Logout</a>
+        </div>
+      </div>
       <% end %>
   </header>
   <%= yield %>
