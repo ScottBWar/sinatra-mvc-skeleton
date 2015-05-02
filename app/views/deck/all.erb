@@ -21,15 +21,15 @@
 
 
 <% all_decks.each do |deck| %>
-<div class="square">
+<a class= "deckname" href="/card/<%=deck.card_ids.sample%>">
+  <div class="square">
     <div class="content">
         <div class="table">
             <div class="table-cell">
-                <ul><a class= "deckname" href="/cards?current_deck_id=<%=deck.id%>"><%= deck.name %> </a>
-
-                </ul>
+                <ul><%= deck.name %></ul>
             </div>
         </div>
     </div>
-</div>
+  </div>
+</a>
 <%end%>
