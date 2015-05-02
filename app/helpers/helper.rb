@@ -5,3 +5,8 @@ def current_user
     return nil
   end
 end
+
+def check_answer(round)
+
+
+end
