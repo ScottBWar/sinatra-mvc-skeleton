@@ -1,8 +1,11 @@
+<!--new_round(user,deck) -->
+
 <h1>Here's your question!!!</h1>
 <p><%=flash_card.question%></p>
 
 <h3>What's your answer?</h3>
-<form action='/:card_id' method='POST'>
+<form action='/cards' method='POST'>
+  <input type='hidden' name='card_id' value='<%=flash_card.id%>'>
   <input type='text' name='answer' placeholder='answer here'>
   <input type='submit'>
 </form>
