@@ -7,6 +7,7 @@ end
 post '/' do
   if User.authenticate(params[:name], params[:password]) != 'deny'
     session[:user_id] = User.find_by(name: params[:name]).id
+
     redirect "/deck_select"
   else
     "[LOG] unauthorized log-in attempt..."
@@ -31,9 +32,10 @@ end
 
 get '/:card_id' do |card_id|
   if current_user
-    Round.new
+
+    round = current_user.rounds.find_or_create_by(live: true, deck_id: params[current_deck])
     check_answer
-    card_array = Card.where(deck_id: params[:deck])
+    card_array = Card.where(deck_id: params[:current_deck_id])
     flash_card = card_array.sample
     erb :"/card/card", locals:{card_array: card_array, flash_card: flash_card}
   else
@@ -42,11 +44,9 @@ get '/:card_id' do |card_id|
 end
 
 post '/:card_id' do
-  # flash_Card = Card.find_by(:card_id)
-  # if flash_card.answer == params[:answer]
-  #   redirect "/:card_id"
-
-  # erb :"/card/card", locals:{card_array: card_array}
-  # redirect
+  guess = Guess.create(round: round, card: params[:card_id])
+  flash_card = Card.find_by(:card_id)
+  check_answer(guess,flash_card,params[:answer])
+  redirect "/:card_id"
 end
 

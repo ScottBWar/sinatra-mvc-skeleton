@@ -13,6 +13,7 @@ gem 'activerecord', '~>4.1'
 gem 'bcrypt-ruby'
 
 gem 'rake'
+gem 'pry'
 
 gem 'shotgun'
 
