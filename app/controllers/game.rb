@@ -30,23 +30,27 @@ get '/deck_select' do
   end
 end
 
-get '/:card_id' do |card_id|
+get '/cards' do
   if current_user
-
-    round = current_user.rounds.find_or_create_by(live: true, deck_id: params[current_deck])
-    check_answer
-    card_array = Card.where(deck_id: params[:current_deck_id])
-    flash_card = card_array.sample
-    erb :"/card/card", locals:{card_array: card_array, flash_card: flash_card}
+    guessed_cards = []
+    deck = Deck.find(params[:current_deck_id])
+    round = Round.find_or_create_by(live: true, deck_id: params[:current_deck_id], user_id: current_user.id)
+    Guess.where(id: round.guess_ids).each do |guess|
+      guessed_cards << guess.card_id
+    end
+    card_array = deck.card_ids - guessed_cards
+    flash_card = Card.find(card_array.sample)
+    erb :"/card/card", locals:{flash_card: flash_card}
   else
     redirect "/"
   end
 end
 
-post '/:card_id' do
-  guess = Guess.create(round: round, card: params[:card_id])
-  flash_card = Card.find_by(:card_id)
-  check_answer(guess,flash_card,params[:answer])
-  redirect "/:card_id"
+post '/cards' do
+  card = Card.find(params[:card_id])
+  round = Round.find_by(live: true, user_id: current_user.id)
+  guess = Guess.create(round: round, card_id: params[:card_id], result: (card.answer.downcase == params[:answer].downcase))
+  round.guesses << guess
+  redirect "/cards?current_deck_id"
 end
 
