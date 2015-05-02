@@ -30,7 +30,8 @@ get '/deck_select' do
   end
 end
 
-get '/cards' do
+
+get '/card/:card_id' do |card_id|
   if current_user
     guessed_cards = []
     deck = Deck.find(params[:current_deck_id])
