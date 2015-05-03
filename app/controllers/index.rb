@@ -11,7 +11,7 @@ post '/' do
     redirect "/deck_select"
   else
     "[LOG] unauthorized log-in attempt..."
-    erb :index
+    redirect "/"
   end
   # redirect "/deck_select" if User.find_by(params) != nil
 end

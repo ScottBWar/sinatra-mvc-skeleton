@@ -8,8 +8,10 @@ get '/card/:card_id' do
       p guessed_cards
     end
     card_array = deck.card_ids - guessed_cards
-    if !card_array
-      erb :"/deck/all?round_over=true"
+    p card_array
+    if card_array.length == 0
+      round.update_attributes(live: 'false')
+      redirect "/deck_select?round_over=true"
     end
     flash_card = Card.find(card_array.sample)
     erb :"/card/show", locals:{flash_card: flash_card}
@@ -23,5 +25,5 @@ post '/card/:card_id' do
   round = Round.find_by(live: true, user_id: current_user.id)
   guess = Guess.create(round: round, card_id: params[:card_id], result: (card.answer.downcase == params[:answer].downcase))
   round.guesses << guess
-  redirect "/card/params[:card_id]"
+  redirect "/card/#{params[:card_id]}?current_deck_id=#{card.deck_id}"
 end
