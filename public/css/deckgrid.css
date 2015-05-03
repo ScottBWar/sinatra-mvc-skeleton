@@ -39,7 +39,6 @@
 }
 
 .table-cell:hover{
-    color: white;
 
     background: linear-gradient(45deg, white, #B6C5BE);
     display:table-cell;
@@ -112,4 +111,8 @@ margin-left:8%;
 
 .table-cell ul {
   font-size: 1.5em;
+}
+
+.perc {
+  color:#27ae60;
 }

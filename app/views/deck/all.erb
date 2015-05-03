@@ -9,7 +9,7 @@
 
 
 
-<div class="animated bounceIn" id="this">
+<div class="animated fadeInDown" id="this">
 <a class="flash2" href="">CHOOSE A DECK</a>
 </div>
 
@@ -32,6 +32,7 @@
         <div class="table">
             <div class="table-cell">
                 <ul><%= deck.name %></ul>
+                <ul class="perc"><%=get_average(deck)%></ul>
             </div>
         </div>
     </div>
