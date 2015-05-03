@@ -1,10 +1,75 @@
-<h1>Here's your question!!!</h1>
+<div class="darksection"></div>
+<h1 id="heres">Here's your question!!!</h1>
 
-<p><%=flash_card.question%></p>
+<div id="real_question" style="visibility: visible">
+  <div class="animated slideInLeft">
+<div class="cardBack">
+  <div class="cardCell">
+    <div class="cardContent">
+    <%=flash_card.question%>
+    <div class="animated slideInRight" id="toggler" style="visibility: none"><h4 id="answer"><%=flash_card.answer%></h4></div>
+   </div>
+ </div>
+</div>
+</div>
 
+
+
+<!-- <div class="animated slideInRight" id="toggler" style="visibility: none"><h4 id="answer"><%=flash_card.answer%></h4></div>
+ -->
+
+<div class="answer_form">
 <h3>What's your answer?</h3>
-<form action='/card/<%=flash_card.id%>?current_deck_id=<%=flash_card.deck_id%>' method='POST'>
+<form action='/card/<%=flash_card.id%>?current_deck_id=<%=flash_card.deck_id%>' id="give_answer" method='POST'>
   <input type='hidden' name='card_id' value='<%=flash_card.id%>'>
   <input type='text' name='answer' placeholder='answer here'>
-  <input type='submit'>
+  <input class='button' type='submit'>
 </form>
+</div>
+
+
+
+<script language="JavaScript">
+
+$(document).ready(function() {
+  $("#toggler").hide();
+    $("#give_answer").submit(function(e) {
+        $("#toggler").show();
+        set.Timeout(continueExectution, 600);
+        $("#toggler").hide();
+    });
+});
+
+</script>
+
+
+
+
+<!-- if (!allowSubmit) {
+      e.preventDefault();
+      set.Timeout(continueExectution, 100);
+      $("#toggler").show();
+      set.Timeout(continueExectution, 100);
+      $("#toggler").hide();
+      set.Timeout(continueExectution, 10)0;
+      allowSubmit=true;
+
+  }
+ -->
+
+<!--
+// $( "#give_answer" ).submit(function(e) {
+//   e.preventDefault();
+//   $("#toggler").show();
+//   setTimeout(continueExecution, 100);
+//   $("#toggler").hide();
+//   return true
+
+// });
+
+ -->
+
+<!-- // $( "#real_question").hide().fadeOut(1000);
+// $( "#real_answer" ).show().fadeIn(1000);
+// return true; -->
+

@@ -3,7 +3,7 @@
 
 </div>
 <%if params[:round_over]%>
-  <h4>Your round is OVER</h4>
+  <h4 style="color:#c0392b;text-align:center;margin-top:20px">Your round is OVER</h4>
 <%end%>
 <div class="intro-div">
 <div class="flash-div">
@@ -23,7 +23,10 @@
 </div>
 
 
+
 <% all_decks.each do |deck| %>
+<div class="slider">
+<div class="animated slideInRight">
 <a class= "deckname" href="/card/<%=deck.card_ids.sample%>?current_deck_id=<%=deck.id%>">
   <div class="square">
     <div class="content">
@@ -35,4 +38,8 @@
     </div>
   </div>
 </a>
+  </div>
+ </div>
+
+
 <%end%>
