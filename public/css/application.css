@@ -103,7 +103,7 @@ background-size: auto, cover;
 
 #answer {
   margin-top: 60px;
-  color:#c0392b;
+  color: #2c3e50;
   font-weight: bold;
   text-align: center;
 }
@@ -119,5 +119,15 @@ background-size: auto, cover;
   margin-bottom:45px;
 }
 
+#right_answer {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+#wrong_answer {
+  color:#c0392b;
+  font-weight: bold;
+  text-align: center;
+}
 
 
