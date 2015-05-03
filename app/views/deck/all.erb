@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="/css/deckgrid.css">
 
 </div>
+<%if deck_select %>
+  <h4 style="color:#c0392b;text-align:center;margin-top:20px">DECK NOT SAVED</h4>
+<%end%>
 <%if params[:round_over]%>
   <h4 style="color:#c0392b;text-align:center;margin-top:20px">Your round is OVER</h4>
 <%end%>
@@ -26,6 +29,20 @@
 <% all_decks.each do |deck| %>
 <div class="slider">
 <div class="animated slideInRight">
+<% if deck.id == 1  %>
+
+<a class= "deckname" href="/deck/new">
+  <div class="square">
+    <div class="content">
+        <div class="table">
+            <div class="table-cell">
+                <ul><%= deck.name %></ul>
+            </div>
+        </div>
+    </div>
+  </div>
+</a>
+<% else %>
 <a class= "deckname" href="/card/<%=deck.card_ids.sample%>?current_deck_id=<%=deck.id%>">
   <div class="square">
     <div class="content">
@@ -38,6 +55,7 @@
     </div>
   </div>
 </a>
+<% end %>
   </div>
  </div>
 

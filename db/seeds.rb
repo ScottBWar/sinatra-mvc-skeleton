@@ -1,3 +1,5 @@
+
+create_deck = Deck.create(:name => 'CREATE YOUR OWN!')
 state_cap_deck = Deck.create(:name => 'State Capitals')
 state_abrev_deck = Deck.create(:name => 'State Abbreviations')
 state_big_city_deck = Deck.create(:name => 'Biggest Cities by State')
