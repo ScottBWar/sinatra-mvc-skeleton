@@ -31,6 +31,14 @@ meta.foundation-version{font-family:"/5.5.2/"}meta.foundation-mq-small{font-fami
 
 }
 
+.flash-div2 {
+  font-family: Helvetica;
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+
+}
+
 .log-in-div {
     margin: 0 auto;
     margin-top: 5%;
@@ -58,6 +66,58 @@ background-size: auto, cover;
 
 }
 
+.cardBack {
+  margin :0 auto;
+  background: #1E1E1E;
+  height: 400px;
+  width: 20%;
+  padding:0.8%;
+  border-radius: 15px;
+  margin-bottom: 5%;
+
+}
+
+.cardCell {
+  border-radius: 10px;
+  background: white;
+  vertical-align:middle;
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+  position: relative;
+  transition: all 1.8s ease;
+}
+
+.cardCell:hover{
+    background: linear-gradient(45deg, white, #2ecc71);
+    vertical-align:middle;
+    transition: all 1.8s ease;
+}
+
+.cardContent {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 2em;
+
+}
+
+#answer {
+  margin-top: 60px;
+  color:#c0392b;
+  font-weight: bold;
+  text-align: center;
+}
+
+.answer_form {
+  margin: 0 auto;
+  width: 60%;
+}
+
+#heres {
+  text-align: center;
+  margin-top:15px;
+  margin-bottom:45px;
+}
 
 
 

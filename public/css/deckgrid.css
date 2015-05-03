@@ -15,7 +15,7 @@
     position:absolute;
     height:100%; /* = 100% - 2*5% padding */
     width:100%; /* = 100% - 2*5% padding */
-    padding: 5%;
+    padding: 4%;
 
 
 }
@@ -93,3 +93,16 @@ h3 {
   -vendor-animation-delay: 10s;
   -vendor-animation-iteration-count: infinite;
 }
+
+.slider {
+margin: 0 auto;
+text-align: center;
+
+}
+
+/*.card-container {
+margin: 0 auto;
+text-align: center;
+width: 80%;
+
+}*/
