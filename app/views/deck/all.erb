@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/deckgrid.css">
+<script src="/js/masonry.js"></script>
 
 </div>
 <%if params[:round_over]%>
@@ -21,7 +22,7 @@
 
 </div>
 
-<div class="cardsurface">
+<div id="container"class="js-masonry" data-masonry-options='{ "columnWidth": 10, "itemSelector": ".square" }'>
 
 <% all_decks.each do |deck| %>
 <div class="slider">
