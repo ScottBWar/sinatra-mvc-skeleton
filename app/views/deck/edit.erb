@@ -1,0 +1,10 @@
+<div><p>Edit your deck</p></div>
+<div>
+<form action='/deck/<%= deck_id %>' method='post'>
+<input type='hidden' name='_method' value='put'/>
+<input type='text' name='name' value ='<%= deck_name %>'/>
+ <div>
+     <input type='submit' value='edit'/>
+ </div>
+</form>
+</div>

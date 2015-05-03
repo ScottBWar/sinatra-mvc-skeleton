@@ -8,6 +8,17 @@ post '/deck/new' do
  redirect "/deck/#{deck_1.id}/card/new"
 end
 
+get '/deck/:deckid/edit' do
+  deck = Deck.find_by(id: params[:deckid])
+  erb :"deck/edit", locals: {deck_id: params[:deck_id], deck_name: deck.name }
+end
+
+put '/deck/:deckid/edit' do
+  value = Deck.find_by(id: params[:deckid])
+  value = Deck.update_attributes( name: params[:name])
+  redirect "/deck_select"
+end
+
 get '/deck_select' do
   if current_user
     all_decks = Deck.all
