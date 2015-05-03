@@ -1,5 +1,9 @@
 get '/deck/new' do
-  erb :"deck/new"
+   if current_user
+     erb :"deck/new"
+   else
+    redirect '/'
+   end
 end
 
 post '/deck/new' do
@@ -9,8 +13,12 @@ post '/deck/new' do
 end
 
 get '/deck/:deckid/edit' do
-  deck = Deck.find_by(id: params[:deckid])
-  erb :"deck/edit", locals: {deck_id: params[:deck_id], deck_name: deck.name }
+  if current_user
+    deck = Deck.find_by(id: params[:deckid])
+    erb :"deck/edit", locals: {deck_id: params[:deck_id], deck_name: deck.name }
+  else
+    redirect '/'
+  end
 end
 
 put '/deck/:deckid/edit' do
@@ -29,7 +37,11 @@ get '/deck_select' do
 end
 
 get "/deck/:deckid/card/new" do
- erb :"card/new" ,locals: {deck_id: params[:deckid]}
+  if current_user
+   erb :"card/new" ,locals: {deck_id: params[:deckid]}
+  else
+    redirect '/'
+  end
 end
 
 post "/deck/:deckid/card" do
