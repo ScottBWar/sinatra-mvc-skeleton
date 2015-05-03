@@ -14,7 +14,13 @@ get '/card/:card_id' do
       redirect "/deck_select?round_over=true"
     end
     flash_card = Card.find(card_array.sample)
-    erb :"/card/show", locals:{flash_card: flash_card}
+    guesses = round.guesses.all.count
+    correct = 0
+    round.guesses.all.each do |guess|
+      correct += 1 if guess.result
+    end
+
+    erb :"/card/show", locals:{flash_card: flash_card, correct: correct, guesses: guesses}
   else
     redirect "/"
   end
