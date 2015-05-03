@@ -11,6 +11,7 @@
     border-radius: 30px;
 }
 
+
 .content {
     position:absolute;
     height:100%; /* = 100% - 2*5% padding */
@@ -19,6 +20,8 @@
 
 
 }
+
+
 .table{
 
     display:table;
@@ -32,12 +35,13 @@
     vertical-align:middle;
     border-radius: 18px;
   transition: all 1.8s ease;
+
 }
 
 .table-cell:hover{
     color: white;
 
-    background: linear-gradient(45deg, white, #8EEDA0);
+    background: linear-gradient(45deg, white, #B6C5BE);
     display:table-cell;
     border-radius: 20px;
     vertical-align:middle;
@@ -100,9 +104,12 @@ text-align: center;
 
 }
 
-/*.card-container {
-margin: 0 auto;
-text-align: center;
-width: 80%;
+.cardsurface {
+width:90%;
+margin-left:8%;
 
-}*/
+}
+
+.table-cell ul {
+  font-size: 1.5em;
+}

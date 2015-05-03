@@ -1,10 +1,35 @@
-<div><p>Edit your deck</p></div>
+
+<link rel="stylesheet" href="/css/fullground.css">
+
+<div class="intro-div">
+<div class="flash-div">
+<a class="flash" href="">FLASHY CARDS</a>
+</div>
+<div class="editor">
+<h1>Edit Your Deck</h1>
 <div>
 <form action='/deck/<%= deck_id %>' method='post'>
 <input type='hidden' name='_method' value='put'/>
 <input type='text' name='name' value ='<%= deck_name %>'/>
  <div>
-     <input type='submit' value='edit'/>
+     <input class='button' type='submit' value='Edit'/>
  </div>
 </form>
 </div>
+</div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
