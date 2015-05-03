@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/css/deckgrid.css">
-<div class="darksection">
 
 </div>
 <%if params[:round_over]%>
@@ -10,7 +9,7 @@
 
 
 
-<div class="animated bounceIn" id="this">
+<div class="animated fadeInDown" id="this">
 <a class="flash2" href="">CHOOSE A DECK</a>
 </div>
 
@@ -22,7 +21,7 @@
 
 </div>
 
-
+<div class="cardsurface">
 
 <% all_decks.each do |deck| %>
 <div class="slider">
@@ -33,6 +32,7 @@
         <div class="table">
             <div class="table-cell">
                 <ul><%= deck.name %></ul>
+                <ul class="perc"><%=get_average(deck)%></ul>
             </div>
         </div>
     </div>
@@ -43,3 +43,5 @@
 
 
 <%end%>
+
+

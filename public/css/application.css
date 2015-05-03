@@ -130,4 +130,16 @@ background-size: auto, cover;
   text-align: center;
 }
 
+.pink {
+  background:#FFA07A;
+}
+
+.green {
+  background:#CCFFCC;
+
+}
+
+a {
+  color: #2ecc71;
+}
 

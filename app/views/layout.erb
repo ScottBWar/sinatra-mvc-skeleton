@@ -23,13 +23,15 @@
 <body>
 <div id="content">
   <header>
-    <div class="darksection">
-
-    <div id="login-toolbar">
       <% if current_user %>
-        <a href="/logout">Logout</a>
+      <div class="darksection">
+        <a href="/logout">Logout</a> <a href="/">Home</a>
         </div>
-      </div>
+        <% else %>
+        <div class="darksection" style="opacity:0;">
+        <a href="/logout">Logout</a> <a href="/">Home</a>
+        </div>
+
       <% end %>
   </header>
   <%= yield %>
